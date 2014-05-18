@@ -17,6 +17,7 @@ namespace LMG
         private List<Coordinates> _currentCoordinates;
         public EventHandler ResetRequested;
         private long _seconds;
+        private long _moves;
         private System.Timers.Timer _timer;
 
         public string GameTime
@@ -41,6 +42,19 @@ namespace LMG
             {
                 _seconds = value;
                 NotifyPropertyChanged("GameTime");
+            }
+        }
+
+        public long Moves
+        {
+            get
+            {
+                return _moves;
+            }
+            set
+            {
+                _moves = value;
+                NotifyPropertyChanged("Moves");
             }
         }
 
@@ -85,7 +99,8 @@ namespace LMG
             if (_pattern != null)
                 Reset(null, EventArgs.Empty);
             _pattern = new Pattern();
-            _seconds = 0;
+            Seconds = 0;
+            Moves = 0;
             _timer = new System.Timers.Timer(1000);
             _timer.Elapsed += new ElapsedEventHandler(_timer_Elapsed);
             _timer.Enabled = true;
@@ -159,6 +174,7 @@ namespace LMG
         private void PostSwipeAction()
         {
             _currentCoordinates = null;
+            Moves++;
             //naliczenie punktow
             //zegar,licznik ruchow
             //wylosowanie trudnosci?

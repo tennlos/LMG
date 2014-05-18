@@ -34,6 +34,12 @@ namespace LMG
                 Action updateLabel = () => labelTime.Text = this._model.GameTime;
                 this.labelTime.Invoke(updateLabel);
             }
+
+            if (e.PropertyName.Equals("Moves"))
+            {
+                Action updateLabel = () => labelMoves.Text = this._model.Moves.ToString() ;
+                this.labelMoves.Invoke(updateLabel);
+            }
         }
 
         protected override bool IsInputKey(Keys keyData)
