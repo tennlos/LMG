@@ -13,6 +13,7 @@ namespace LMG
     public partial class MainWindow : Form
     {
         private MainWindowModel _model;
+        bool _finished;
 
         public MainWindow()
         {
@@ -22,9 +23,11 @@ namespace LMG
             KeyPreview = true;
             this._model._board.PropertyChanged += BoardChanged;
             this._model.ResetRequested += OnReset;
+            
 
             //workaround, tylko czas
             this._model.PropertyChanged+=_model_PropertyChanged;
+            this._model.Finished += this.OnFinished;
         }
 
         private void _model_PropertyChanged(object sender, PropertyChangedEventArgs e)
@@ -58,8 +61,11 @@ namespace LMG
         {
            if (keyData == Keys.Right || keyData == Keys.Up || keyData == Keys.Left || keyData == Keys.Down)
             {
-                this._model.OnKeyDown(keyData);
-                return true;
+                if (!_finished)
+                {
+                    this._model.OnKeyDown(keyData);
+                    return true;
+                }
             }
             return base.ProcessCmdKey(ref msg, keyData);
         }
@@ -201,6 +207,14 @@ namespace LMG
         private void OnReset(object sender, EventArgs e)
         {
             this.Reset_Bindings();
+            this._finished = false;
+        }
+
+        private void OnFinished(object sender, EventArgs e)
+        {
+            this.border.Visible = false;
+            this._finished = true;
+            System.Windows.Forms.MessageBox.Show("You win!");
         }
 
     }

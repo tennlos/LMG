@@ -16,6 +16,7 @@ namespace LMG
         public Pattern _board;
         private List<Coordinates> _currentCoordinates;
         public EventHandler ResetRequested;
+        public EventHandler Finished;
         private long _seconds;
         private long _moves;
         private System.Timers.Timer _timer;
@@ -114,6 +115,8 @@ namespace LMG
 
         private void Finish()
         {
+            if(Finished !=null)
+                Finished(null, EventArgs.Empty);
             _timer.Enabled = false;
         }
 
