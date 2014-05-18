@@ -292,7 +292,7 @@ namespace LMG
             }
         }
 
-        public List<Coordinates> GenerateColor(int number)
+        public List<Coordinates> GenerateColor(int number, Pattern pattern)
         {
             List<Coordinates> list = new List<Coordinates>();
             int generated = 0;
@@ -303,6 +303,8 @@ namespace LMG
                 var column = random.Next(5);
                 if(patterns[row][column] == Color.Gray)
                 {
+                    if (CheckNeighboursValidity(row,column,pattern))
+                        continue;
                     patterns[row][column] = this.GetColor();
                     var property = this.GetType().GetProperty("Pb" + (row + 1).ToString() + (column + 1).ToString());
                     NotifyPropertyChanged(property.Name);
@@ -313,6 +315,25 @@ namespace LMG
 
             return list;
             
+        }
+
+        private bool CheckNeighboursValidity(int row, int column, Pattern pattern)
+        {
+            if (row > 0)
+                if (patterns[row - 1][column].ToArgb() != pattern.patterns[row - 1][column].ToArgb())
+                    return false;
+            if (row < (_size - 1))
+                if (patterns[row + 1][column].ToArgb() != pattern.patterns[row + 1][column].ToArgb())
+                    return false;
+            if (column > 0)
+                if (patterns[row][column - 1].ToArgb() != pattern.patterns[row][column - 1].ToArgb())
+                    return false;
+            if (column < (_size - 1))
+                if (patterns[row][column + 1].ToArgb() != pattern.patterns[row][column + 1].ToArgb())
+                    return false;
+            return true;
+
+
         }
 
         public void ManageColorOnBoard(int row, int column, Direction direction, Color current)
@@ -401,7 +422,7 @@ namespace LMG
                     offset = 1;
                 for (int j = offset; j < Pattern._size; j += 2)
                 {
-                    if (patterns[i][j] != pattern.patterns[i][j])
+                    if (patterns[i][j].ToArgb() != pattern.patterns[i][j].ToArgb())
                         return false;
                 }
             }

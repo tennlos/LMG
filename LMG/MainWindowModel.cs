@@ -80,7 +80,7 @@ namespace LMG
 
         public void Generate()
         {
-            _currentCoordinates = _board.GenerateColor(1);
+            _currentCoordinates = _board.GenerateColor(1,_pattern);
             //make a list with available properties;
         }
 
@@ -115,7 +115,6 @@ namespace LMG
         private void Finish()
         {
             _timer.Enabled = false;
-            throw new NotImplementedException();
         }
 
         private void Reset(object sender, EventArgs e)
