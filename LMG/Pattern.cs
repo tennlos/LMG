@@ -241,7 +241,7 @@ namespace LMG
                     if (!board)
                         patterns[i][j] = GetColor();
                     else
-                        patterns[i][j] = Color.White;
+                        patterns[i][j] = Color.Black;
                 }
                 if (offset == 1)
                     offset = 0;
@@ -343,33 +343,33 @@ namespace LMG
                 case Direction.East:
                     if (column + 1 >= _size)
                         throw new OutofBoundException();
-                    if (patterns[row][column + 1] == Color.White)
-                        SetStraightColor(row, column + 1, current);
-                    else
+//                    if (patterns[row][column + 1] == Color.White)
+//                        SetStraightColor(row, column + 1, current);
+//                    else
                         SetColor(row, column + 1, current);
                     break;
                 case Direction.West:
                     if (column == 0)
                         throw new OutofBoundException();
-                    if (patterns[row][column - 1] == Color.White)
-                        SetStraightColor(row, column - 1, current);
-                    else
+//                    if (patterns[row][column - 1] == Color.White)
+//                        SetStraightColor(row, column - 1, current);
+//                    else
                         SetColor(row, column - 1, current);
                     break;
                 case Direction.South:
                     if (row + 1 >= _size)
                         throw new OutofBoundException();
-                    if (patterns[row+1][column] == Color.White)
-                        SetStraightColor(row+1, column, current);
-                    else
+//                    if (patterns[row+1][column] == Color.White)
+//                        SetStraightColor(row+1, column, current);
+//                    else
                         SetColor(row+1, column, current);
                     break;
                 case Direction.North:
                     if (row == 0)
                         throw new OutofBoundException();
-                    if (patterns[row - 1][column] == Color.White)
-                        SetStraightColor(row - 1, column, current);
-                    else
+//                    if (patterns[row - 1][column] == Color.White)
+//                        SetStraightColor(row - 1, column, current);
+//                    else
                         SetColor(row - 1, column, current);
                     break;
             }
