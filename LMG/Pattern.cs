@@ -239,7 +239,7 @@ namespace LMG
                 for (int j=offset; j < size; j+=2)
                 {
                     if (!board)
-                        patterns[i][j] = GetColor();
+                        patterns[i][j] = GetColor(true);
                     else
                         patterns[i][j] = Color.Black;
                 }
@@ -275,9 +275,17 @@ namespace LMG
             }
         }
 
-        public Color GetColor()
+        public Color GetColor(bool isMixed = false)
         {
-            var color = rnd.Next(3);
+            int color;
+            if (isMixed)
+            {
+                color = rnd.Next(6);
+            }
+            else
+            {
+                color = rnd.Next(3);
+            }
             switch (color)
             {
                 case 0:
@@ -286,6 +294,12 @@ namespace LMG
                     return Color.Blue;
                 case 2:
                     return Color.Green;
+                case 3:
+                    return Color.Yellow;
+                case 4:
+                    return Color.Magenta;
+                case 5:
+                    return Color.Cyan;
                 default:
                     return Color.Red;
 

@@ -115,9 +115,9 @@ namespace LMG
 
         private void Finish()
         {
-            if(Finished !=null)
-                Finished(null, EventArgs.Empty);
             _timer.Enabled = false;
+            if (Finished !=null)
+                Finished(null, EventArgs.Empty);
         }
 
         private void Reset(object sender, EventArgs e)
