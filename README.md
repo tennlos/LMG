@@ -11,3 +11,30 @@ Gra powinna spełniać następujące założenia:
 
 Zasady gry zostały stworzone w oparciu o ww. ustalenia.
 
+Etapy rozwoju projektu
+---
+
+**spotkanie 1**
+
+Wybranie tematyki projektu, sprecyzowanie wstępnych wymagań oraz wykorzystywanej technologii.
+
+**spotkanie 2**
+
+Ustalenie szczegółów dotyczących realizacji projektu oraz przygotowanie wizji.
+[WIZJA PROJEKTU](https://github.com/tennlos/LMG/blob/master/doc/wizja.pdf)
+
+**spotkanie 3**
+
+Wstępna analiza możliwości i właściwości technologii LEAP Motion pod kątem wykorzystania jej w naszym projekcie.
+Opracowanie dokładniejszego planu rozwoju projektu.
+
+**spotkanie 4**
+
+Analiza krytyczna technologii LEAP Motion.
+Stworzenie wstępnego prototypu gry (na razie bez wykorzystania LEAP Motion).
+
+**spotkanie 5**
+Dalsze rozwijanie prototypu.
+
+**spotkanie 6**
+*TODO*
