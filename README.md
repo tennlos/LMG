@@ -31,11 +31,13 @@ Opracowanie dokładniejszego planu rozwoju projektu.
 **spotkanie 4**
 
 Analiza krytyczna technologii LEAP Motion.  
-Stworzenie wstępnego prototypu gry (na razie bez wykorzystania LEAP Motion).
+Stworzenie wstępnego prototypu gry (na razie bez wykorzystania LEAP Motion).  
 [PREZENTACJA](https://github.com/tennlos/LMG/blob/master/doc/prezentacja.pdf?raw=true)
 
 **spotkanie 5**
+
 Dalsze rozwijanie prototypu.
 
 **spotkanie 6**
+
 *TODO*
