@@ -20,18 +20,19 @@ Wybranie tematyki projektu, sprecyzowanie wstępnych wymagań oraz wykorzystywan
 
 **spotkanie 2**
 
-Ustalenie szczegółów dotyczących realizacji projektu oraz przygotowanie wizji.
-[WIZJA PROJEKTU](https://github.com/tennlos/LMG/blob/master/doc/wizja.pdf)
+Ustalenie szczegółów dotyczących realizacji projektu oraz przygotowanie wizji.  
+[WIZJA PROJEKTU](https://github.com/tennlos/LMG/blob/master/doc/wizja.pdf?raw=true)
 
 **spotkanie 3**
 
-Wstępna analiza możliwości i właściwości technologii LEAP Motion pod kątem wykorzystania jej w naszym projekcie.
+Wstępna analiza możliwości i właściwości technologii LEAP Motion pod kątem wykorzystania jej w naszym projekcie.  
 Opracowanie dokładniejszego planu rozwoju projektu.
 
 **spotkanie 4**
 
-Analiza krytyczna technologii LEAP Motion.
+Analiza krytyczna technologii LEAP Motion.  
 Stworzenie wstępnego prototypu gry (na razie bez wykorzystania LEAP Motion).
+[PREZENTACJA](https://github.com/tennlos/LMG/blob/master/doc/prezentacja.pdf?raw=true)
 
 **spotkanie 5**
 Dalsze rozwijanie prototypu.
