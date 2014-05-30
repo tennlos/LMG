@@ -89,6 +89,10 @@
             this.labelMoves = new System.Windows.Forms.Label();
             this.labelPoints = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fIleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.highscoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pb31)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb41)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb51)).BeginInit();
@@ -141,6 +145,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pt45)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // shapeContainer1
@@ -150,7 +155,7 @@
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.border});
-            this.shapeContainer1.Size = new System.Drawing.Size(654, 424);
+            this.shapeContainer1.Size = new System.Drawing.Size(654, 468);
             this.shapeContainer1.TabIndex = 0;
             this.shapeContainer1.TabStop = false;
             // 
@@ -166,7 +171,7 @@
             // 
             this.pb31.BackColor = System.Drawing.SystemColors.Control;
             this.pb31.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb31.Location = new System.Drawing.Point(54, 172);
+            this.pb31.Location = new System.Drawing.Point(55, 219);
             this.pb31.Margin = new System.Windows.Forms.Padding(0);
             this.pb31.Name = "pb31";
             this.pb31.Size = new System.Drawing.Size(80, 80);
@@ -177,7 +182,7 @@
             // 
             this.pb41.BackColor = System.Drawing.Color.White;
             this.pb41.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb41.Location = new System.Drawing.Point(54, 252);
+            this.pb41.Location = new System.Drawing.Point(55, 299);
             this.pb41.Margin = new System.Windows.Forms.Padding(0);
             this.pb41.Name = "pb41";
             this.pb41.Size = new System.Drawing.Size(80, 80);
@@ -188,7 +193,7 @@
             // 
             this.pb51.BackColor = System.Drawing.SystemColors.Control;
             this.pb51.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb51.Location = new System.Drawing.Point(54, 332);
+            this.pb51.Location = new System.Drawing.Point(55, 379);
             this.pb51.Margin = new System.Windows.Forms.Padding(0);
             this.pb51.Name = "pb51";
             this.pb51.Size = new System.Drawing.Size(80, 80);
@@ -199,7 +204,7 @@
             // 
             this.pb52.BackColor = System.Drawing.Color.White;
             this.pb52.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb52.Location = new System.Drawing.Point(134, 332);
+            this.pb52.Location = new System.Drawing.Point(135, 379);
             this.pb52.Margin = new System.Windows.Forms.Padding(0);
             this.pb52.Name = "pb52";
             this.pb52.Size = new System.Drawing.Size(80, 80);
@@ -210,7 +215,7 @@
             // 
             this.pb42.BackColor = System.Drawing.SystemColors.Control;
             this.pb42.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb42.Location = new System.Drawing.Point(134, 252);
+            this.pb42.Location = new System.Drawing.Point(135, 299);
             this.pb42.Margin = new System.Windows.Forms.Padding(0);
             this.pb42.Name = "pb42";
             this.pb42.Size = new System.Drawing.Size(80, 80);
@@ -221,7 +226,7 @@
             // 
             this.pb32.BackColor = System.Drawing.Color.White;
             this.pb32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb32.Location = new System.Drawing.Point(134, 172);
+            this.pb32.Location = new System.Drawing.Point(135, 219);
             this.pb32.Margin = new System.Windows.Forms.Padding(0);
             this.pb32.Name = "pb32";
             this.pb32.Size = new System.Drawing.Size(80, 80);
@@ -232,7 +237,7 @@
             // 
             this.pb53.BackColor = System.Drawing.SystemColors.Control;
             this.pb53.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb53.Location = new System.Drawing.Point(214, 332);
+            this.pb53.Location = new System.Drawing.Point(215, 379);
             this.pb53.Margin = new System.Windows.Forms.Padding(0);
             this.pb53.Name = "pb53";
             this.pb53.Size = new System.Drawing.Size(80, 80);
@@ -243,7 +248,7 @@
             // 
             this.pb43.BackColor = System.Drawing.Color.White;
             this.pb43.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb43.Location = new System.Drawing.Point(214, 252);
+            this.pb43.Location = new System.Drawing.Point(215, 299);
             this.pb43.Margin = new System.Windows.Forms.Padding(0);
             this.pb43.Name = "pb43";
             this.pb43.Size = new System.Drawing.Size(80, 80);
@@ -254,7 +259,7 @@
             // 
             this.pb33.BackColor = System.Drawing.SystemColors.Control;
             this.pb33.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb33.Location = new System.Drawing.Point(214, 172);
+            this.pb33.Location = new System.Drawing.Point(215, 219);
             this.pb33.Margin = new System.Windows.Forms.Padding(0);
             this.pb33.Name = "pb33";
             this.pb33.Size = new System.Drawing.Size(80, 80);
@@ -265,7 +270,7 @@
             // 
             this.pb54.BackColor = System.Drawing.Color.White;
             this.pb54.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb54.Location = new System.Drawing.Point(294, 332);
+            this.pb54.Location = new System.Drawing.Point(295, 379);
             this.pb54.Margin = new System.Windows.Forms.Padding(0);
             this.pb54.Name = "pb54";
             this.pb54.Size = new System.Drawing.Size(80, 80);
@@ -276,7 +281,7 @@
             // 
             this.pb44.BackColor = System.Drawing.SystemColors.Control;
             this.pb44.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb44.Location = new System.Drawing.Point(294, 252);
+            this.pb44.Location = new System.Drawing.Point(295, 299);
             this.pb44.Margin = new System.Windows.Forms.Padding(0);
             this.pb44.Name = "pb44";
             this.pb44.Size = new System.Drawing.Size(80, 80);
@@ -287,7 +292,7 @@
             // 
             this.pb34.BackColor = System.Drawing.Color.White;
             this.pb34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb34.Location = new System.Drawing.Point(294, 172);
+            this.pb34.Location = new System.Drawing.Point(295, 219);
             this.pb34.Margin = new System.Windows.Forms.Padding(0);
             this.pb34.Name = "pb34";
             this.pb34.Size = new System.Drawing.Size(80, 80);
@@ -298,7 +303,7 @@
             // 
             this.pb55.BackColor = System.Drawing.SystemColors.Control;
             this.pb55.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb55.Location = new System.Drawing.Point(374, 332);
+            this.pb55.Location = new System.Drawing.Point(375, 379);
             this.pb55.Margin = new System.Windows.Forms.Padding(0);
             this.pb55.Name = "pb55";
             this.pb55.Size = new System.Drawing.Size(80, 80);
@@ -309,7 +314,7 @@
             // 
             this.pb45.BackColor = System.Drawing.Color.White;
             this.pb45.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb45.Location = new System.Drawing.Point(374, 252);
+            this.pb45.Location = new System.Drawing.Point(375, 299);
             this.pb45.Margin = new System.Windows.Forms.Padding(0);
             this.pb45.Name = "pb45";
             this.pb45.Size = new System.Drawing.Size(80, 80);
@@ -320,7 +325,7 @@
             // 
             this.pb11.BackColor = System.Drawing.SystemColors.Control;
             this.pb11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb11.Location = new System.Drawing.Point(54, 12);
+            this.pb11.Location = new System.Drawing.Point(55, 59);
             this.pb11.Margin = new System.Windows.Forms.Padding(0);
             this.pb11.Name = "pb11";
             this.pb11.Size = new System.Drawing.Size(80, 80);
@@ -331,7 +336,7 @@
             // 
             this.pb21.BackColor = System.Drawing.Color.White;
             this.pb21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb21.Location = new System.Drawing.Point(54, 92);
+            this.pb21.Location = new System.Drawing.Point(55, 139);
             this.pb21.Margin = new System.Windows.Forms.Padding(0);
             this.pb21.Name = "pb21";
             this.pb21.Size = new System.Drawing.Size(80, 80);
@@ -342,7 +347,7 @@
             // 
             this.pb12.BackColor = System.Drawing.Color.White;
             this.pb12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb12.Location = new System.Drawing.Point(134, 12);
+            this.pb12.Location = new System.Drawing.Point(135, 59);
             this.pb12.Margin = new System.Windows.Forms.Padding(0);
             this.pb12.Name = "pb12";
             this.pb12.Size = new System.Drawing.Size(80, 80);
@@ -353,7 +358,7 @@
             // 
             this.pb22.BackColor = System.Drawing.SystemColors.Control;
             this.pb22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb22.Location = new System.Drawing.Point(134, 92);
+            this.pb22.Location = new System.Drawing.Point(135, 139);
             this.pb22.Margin = new System.Windows.Forms.Padding(0);
             this.pb22.Name = "pb22";
             this.pb22.Size = new System.Drawing.Size(80, 80);
@@ -364,7 +369,7 @@
             // 
             this.pb13.BackColor = System.Drawing.SystemColors.Control;
             this.pb13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb13.Location = new System.Drawing.Point(214, 12);
+            this.pb13.Location = new System.Drawing.Point(215, 59);
             this.pb13.Margin = new System.Windows.Forms.Padding(0);
             this.pb13.Name = "pb13";
             this.pb13.Size = new System.Drawing.Size(80, 80);
@@ -375,7 +380,7 @@
             // 
             this.pb23.BackColor = System.Drawing.Color.White;
             this.pb23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb23.Location = new System.Drawing.Point(214, 92);
+            this.pb23.Location = new System.Drawing.Point(215, 139);
             this.pb23.Margin = new System.Windows.Forms.Padding(0);
             this.pb23.Name = "pb23";
             this.pb23.Size = new System.Drawing.Size(80, 80);
@@ -386,7 +391,7 @@
             // 
             this.pb14.BackColor = System.Drawing.Color.White;
             this.pb14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb14.Location = new System.Drawing.Point(294, 12);
+            this.pb14.Location = new System.Drawing.Point(295, 59);
             this.pb14.Margin = new System.Windows.Forms.Padding(0);
             this.pb14.Name = "pb14";
             this.pb14.Size = new System.Drawing.Size(80, 80);
@@ -397,7 +402,7 @@
             // 
             this.pb24.BackColor = System.Drawing.SystemColors.Control;
             this.pb24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb24.Location = new System.Drawing.Point(294, 92);
+            this.pb24.Location = new System.Drawing.Point(295, 139);
             this.pb24.Margin = new System.Windows.Forms.Padding(0);
             this.pb24.Name = "pb24";
             this.pb24.Size = new System.Drawing.Size(80, 80);
@@ -408,7 +413,7 @@
             // 
             this.pb15.BackColor = System.Drawing.SystemColors.Control;
             this.pb15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb15.Location = new System.Drawing.Point(374, 12);
+            this.pb15.Location = new System.Drawing.Point(375, 59);
             this.pb15.Margin = new System.Windows.Forms.Padding(0);
             this.pb15.Name = "pb15";
             this.pb15.Size = new System.Drawing.Size(80, 80);
@@ -419,7 +424,7 @@
             // 
             this.pb25.BackColor = System.Drawing.Color.White;
             this.pb25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb25.Location = new System.Drawing.Point(374, 92);
+            this.pb25.Location = new System.Drawing.Point(375, 139);
             this.pb25.Margin = new System.Windows.Forms.Padding(0);
             this.pb25.Name = "pb25";
             this.pb25.Size = new System.Drawing.Size(80, 80);
@@ -430,7 +435,7 @@
             // 
             this.pb35.BackColor = System.Drawing.SystemColors.Control;
             this.pb35.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb35.Location = new System.Drawing.Point(374, 172);
+            this.pb35.Location = new System.Drawing.Point(375, 219);
             this.pb35.Margin = new System.Windows.Forms.Padding(0);
             this.pb35.Name = "pb35";
             this.pb35.Size = new System.Drawing.Size(80, 80);
@@ -674,7 +679,7 @@
             this.panel1.Controls.Add(this.pt51);
             this.panel1.Controls.Add(this.pt21);
             this.panel1.Controls.Add(this.pt11);
-            this.panel1.Location = new System.Drawing.Point(466, 12);
+            this.panel1.Location = new System.Drawing.Point(467, 59);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(139, 136);
             this.panel1.TabIndex = 52;
@@ -738,18 +743,51 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(473, 160);
+            this.panel2.Location = new System.Drawing.Point(474, 207);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(160, 113);
             this.panel2.TabIndex = 59;
             this.panel2.Visible = false;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fIleToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(654, 24);
+            this.menuStrip1.TabIndex = 60;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fIleToolStripMenuItem
+            // 
+            this.fIleToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newGameToolStripMenuItem,
+            this.highscoresToolStripMenuItem});
+            this.fIleToolStripMenuItem.Name = "fIleToolStripMenuItem";
+            this.fIleToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fIleToolStripMenuItem.Text = "File";
+            // 
+            // newGameToolStripMenuItem
+            // 
+            this.newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
+            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newGameToolStripMenuItem.Text = "New Game";
+            this.newGameToolStripMenuItem.Click += new System.EventHandler(this.newGameToolStripMenuItem_Click);
+            // 
+            // highscoresToolStripMenuItem
+            // 
+            this.highscoresToolStripMenuItem.Name = "highscoresToolStripMenuItem";
+            this.highscoresToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.highscoresToolStripMenuItem.Text = "Highscores";
+            this.highscoresToolStripMenuItem.Click += new System.EventHandler(this.highscoresToolStripMenuItem_Click);
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(654, 424);
+            this.ClientSize = new System.Drawing.Size(654, 468);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button1);
@@ -778,7 +816,9 @@
             this.Controls.Add(this.pb51);
             this.Controls.Add(this.pb41);
             this.Controls.Add(this.pb31);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.shapeContainer1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainWindow";
             this.Text = "LMG";
             ((System.ComponentModel.ISupportInitialize)(this.pb31)).EndInit();
@@ -834,7 +874,10 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -901,6 +944,10 @@
         private System.Windows.Forms.Label labelMoves;
         private System.Windows.Forms.Label labelPoints;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fIleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newGameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem highscoresToolStripMenuItem;
     }
 }
 

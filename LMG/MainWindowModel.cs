@@ -20,6 +20,9 @@ namespace LMG
         private long _seconds;
         private long _moves;
         private System.Timers.Timer _timer;
+        private static int MaxPoints = 10000;
+        private static int PointLostPerSecond = 5;
+        private static int PointLostPerMove = 10;
 
         public string GameTime
         {
@@ -33,6 +36,14 @@ namespace LMG
             }
         }
 
+        public string Points
+        {
+            get
+            {
+                return (MaxPoints - (PointLostPerSecond * _seconds) - (PointLostPerMove * Moves)).ToString();
+            }
+        }
+
         public long Seconds
         {
             get
@@ -43,6 +54,7 @@ namespace LMG
             {
                 _seconds = value;
                 NotifyPropertyChanged("GameTime");
+                NotifyPropertyChanged("Points");
             }
         }
 
@@ -56,6 +68,7 @@ namespace LMG
             {
                 _moves = value;
                 NotifyPropertyChanged("Moves");
+                NotifyPropertyChanged("Points");
             }
         }
 
@@ -128,45 +141,16 @@ namespace LMG
             _timer.Enabled = false;
         }
 
-        public bool Swipe(Keys e)
+        public bool Swipe(Direction direction)
         {
             bool result = false;
             if (_currentCoordinates != null)
             {
-                switch (e)
+               foreach (var coords in _currentCoordinates)
                 {
-                    case Keys.Left:
-                        foreach (var coords in _currentCoordinates)
-                        {
-                            if (Push(coords._column, coords._row, Direction.West, coords._color))
-                                result = true;
-                            _board.SetStraightColor(coords._row, coords._column, Color.Gray);
-                        }
-                        break;
-                    case Keys.Right:
-                        foreach (var coords in _currentCoordinates)
-                        {
-                            if (Push(coords._column, coords._row, Direction.East, coords._color))
-                                result =  true;
-                            _board.SetStraightColor(coords._row, coords._column, Color.Gray);
-                        }
-                        break;
-                    case Keys.Up:
-                        foreach (var coords in _currentCoordinates)
-                        {
-                            if (Push(coords._column, coords._row, Direction.North, coords._color))
-                                result = true;
-                            _board.SetStraightColor(coords._row, coords._column, Color.Gray);
-                        }
-                        break;
-                    case Keys.Down:
-                        foreach (var coords in _currentCoordinates)
-                        {
-                            if (Push(coords._column, coords._row, Direction.South, coords._color))
-                                result = true;
-                            _board.SetStraightColor(coords._row, coords._column, Color.Gray);
-                        }
-                        break;
+                    if (Push(coords._column, coords._row, direction, coords._color))
+                        result = true;
+                    _board.SetStraightColor(coords._row, coords._column, Color.Gray);
                 }
                 PostSwipeAction();   
             }
@@ -183,11 +167,11 @@ namespace LMG
 
         }
 
-        public void OnKeyDown(Keys e)
+        public void OnKeyDown(Direction direction)
         {
             try
             {
-                if (Swipe(e))
+                if (Swipe(direction))
                     this.Finish();
                 else
                     Generate();

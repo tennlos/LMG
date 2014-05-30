@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Leap;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,9 +15,11 @@ namespace LMG
     {
         private MainWindowModel _model;
         bool _finished;
+        private Controller _controller;
 
         public MainWindow()
         {
+            InitializeLeap();
             this._model = new MainWindowModel();
             InitializeComponent();
             this.panel1.Visible = false;
@@ -28,6 +31,20 @@ namespace LMG
             //workaround, tylko czas
             this._model.PropertyChanged+=_model_PropertyChanged;
             this._model.Finished += this.OnFinished;
+        }
+
+        private void InitializeLeap()
+        {
+            var listener = new LMGListener();
+            listener.SwipeDetected += SwipeDetetcted;
+            _controller = new Controller();
+            _controller.AddListener(listener);
+        }
+
+        private void SwipeDetetcted(object sender, DirectionEventArgs e)
+        {
+            if (_model._pattern!=null)
+                this._model.OnKeyDown(e.Direction);
         }
 
         private void _model_PropertyChanged(object sender, PropertyChangedEventArgs e)
@@ -42,6 +59,12 @@ namespace LMG
             {
                 Action updateLabel = () => labelMoves.Text = this._model.Moves.ToString() ;
                 this.labelMoves.Invoke(updateLabel);
+            }
+
+            if (e.PropertyName.Equals("Points"))
+            {
+                Action updateLabel = () => labelPoints.Text = this._model.Points.ToString();
+                this.labelPoints.Invoke(updateLabel);
             }
         }
 
@@ -63,12 +86,29 @@ namespace LMG
             {
                 if (!_finished)
                 {
-                    this._model.OnKeyDown(keyData);
+                    switch (keyData)
+                    {
+                        case Keys.Up:
+                            this._model.OnKeyDown(Direction.North);
+                            return true;
+                        case Keys.Down:
+                            this._model.OnKeyDown(Direction.South);
+                            return true;
+                        case Keys.Left:
+                            this._model.OnKeyDown(Direction.West);
+                            return true;
+                        case Keys.Right:
+                            this._model.OnKeyDown(Direction.East);
+                            return true;
+                    }
+                    
                     return true;
                 }
             }
             return base.ProcessCmdKey(ref msg, keyData);
         }
+
+        public delegate void BoardChangedDel(object sender, PropertyChangedEventArgs e);
 
         private void BoardChanged(object sender, PropertyChangedEventArgs e)
         {
@@ -77,11 +117,16 @@ namespace LMG
             {
                 var property = this.GetType().GetField("pb" + num);
                 var val = property.GetValue(this) as PictureBox;
-                val.SendToBack();
-                this.border.Location = new Point(val.Location.X+2,val.Location.Y + 2);
-                this.border.BringToFront();
-                this.border.Visible = true;
-                this.Refresh();
+                if (val.InvokeRequired)
+                    val.Invoke(new BoardChangedDel(BoardChanged), new object[] { sender, e });
+                else
+                {
+                    val.SendToBack();
+                    this.border.Location = new Point(val.Location.X + 2, val.Location.Y + 2);
+                    this.border.BringToFront();
+                    this.border.Visible = true;
+                    //this.Refresh();
+                }
             }
              
         }
@@ -214,7 +259,28 @@ namespace LMG
         {
             this.border.Visible = false;
             this._finished = true;
-            System.Windows.Forms.MessageBox.Show("You win!");
+            using (var dialog = new Highscore(Convert.ToInt32(_model.Points)))
+            {
+                dialog.ShowDialog();
+            }
+            //_controller.RemoveListener(listener);
+            _controller.Dispose();
+        }
+
+        private void newGameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _model.Start();
+            AddBindings();
+            this.panel1.Visible = true;
+            this.panel2.Visible = true;
+        }
+
+        private void highscoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var dialog = new Highscore())
+            {
+                dialog.ShowDialog();
+            }
         }
 
     }
