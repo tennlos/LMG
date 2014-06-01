@@ -52,6 +52,10 @@ namespace LMG
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(164, 288);
             this.Controls.Add(this.listView1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(180, 327);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(180, 327);
             this.Name = "Highscore";
             this.Text = "Highscore";
             this.ResumeLayout(false);

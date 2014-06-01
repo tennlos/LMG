@@ -56,10 +56,10 @@ namespace LMG
             if (frame.Gestures().Count > 0 && frame.Gestures().First().Type == Gesture.GestureType.TYPE_SWIPE)
             {
                 SwipeGesture swipe = new SwipeGesture(frame.Gestures().First());
-                
+
                 var direction = DetermineDirection(swipe);
                 //var speed = swipe.Speed;
-               
+
                 stoper.Stop();
                 if (SwipeDetected != null && stoper.ElapsedMilliseconds > 500)
                 {
@@ -68,13 +68,15 @@ namespace LMG
                 }
                 stoper.Start();
                 //SafeWriteLine("Swipe Move detected. Direction: " + DetermineDirection(swipe) + ". Speed " + speed);
-                
+
             }
         }
 
         private Direction DetermineDirection(SwipeGesture gesture)
         {
             var direction = gesture.Direction;
+            if (Math.Abs(gesture.Direction.y) > Math.Abs(direction.x) && Math.Abs(gesture.Direction.y) > Math.Abs(direction.z) && gesture.Direction.y > 0)
+                return Direction.Ignored;
             if (gesture.Direction.x < 0 && Math.Abs(direction.x) > Math.Abs(direction.z))
                 return Direction.West;
             if (gesture.Direction.x >= 0 && Math.Abs(direction.x) > Math.Abs(direction.z))

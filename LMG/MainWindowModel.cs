@@ -23,6 +23,7 @@ namespace LMG
         private static int MaxPoints = 10000;
         private static int PointLostPerSecond = 5;
         private static int PointLostPerMove = 10;
+        private string _lastMove;
 
         public string GameTime
         {
@@ -40,7 +41,7 @@ namespace LMG
         {
             get
             {
-                return (MaxPoints - (PointLostPerSecond * _seconds) - (PointLostPerMove * Moves)).ToString();
+                return (MaxPoints - (PointLostPerSecond * _seconds) - (PointLostPerMove * Moves) - Penalty).ToString();
             }
         }
 
@@ -72,6 +73,8 @@ namespace LMG
             }
         }
 
+        public long Penalty = 0;
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         private void NotifyPropertyChanged(String info)
@@ -100,6 +103,12 @@ namespace LMG
 
         public bool Push(int column, int row, Direction direction, Color currentColor)
         {
+            if (direction == Direction.Ignored)
+            {
+                Penalty += 100;
+                return false;
+            }
+
             _board.ManageColorOnBoard(row, column, direction, currentColor);
 
             if (this._pattern.ComparePatterns(_board))
@@ -139,10 +148,14 @@ namespace LMG
                 ResetRequested(sender, e);
             _board = Pattern.CreateBoard();
             _timer.Enabled = false;
+            Penalty = 0;
         }
 
         public bool Swipe(Direction direction)
         {
+            if (_lastMove == Points)
+                return false;
+
             bool result = false;
             if (_currentCoordinates != null)
             {
@@ -151,6 +164,7 @@ namespace LMG
                     if (Push(coords._column, coords._row, direction, coords._color))
                         result = true;
                     _board.SetStraightColor(coords._row, coords._column, Color.Gray);
+                    _lastMove = Points;
                 }
                 PostSwipeAction();   
             }
@@ -189,6 +203,7 @@ namespace LMG
         North,
         South,
         East,
-        West
+        West,
+        Ignored
     }
 }
