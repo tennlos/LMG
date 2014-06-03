@@ -40,4 +40,5 @@ Dalsze rozwijanie prototypu.
 
 **spotkanie 6**
 
-*TODO*
+Integracja z Leap Motion zakończona sukcesem. Dodanie sposobu liczenia punktów. Implementacja serializowanych High Scores.
+Dodatkowe usprawnienia zasad gry.
