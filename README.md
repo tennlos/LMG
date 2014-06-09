@@ -42,3 +42,8 @@ Dalsze rozwijanie prototypu.
 
 Integracja z Leap Motion zakończona sukcesem. Dodanie sposobu liczenia punktów. Implementacja serializowanych High Scores.
 Dodatkowe usprawnienia zasad gry.
+
+**spotkanie 7**
+
+Stworzenie dokumentu podsumowującego projekt. Zakończenie projektu.  
+[WNIOSKI KOŃCOWE](https://github.com/tennlos/LMG/blob/master/doc/wnioski.pdf?raw=true)
